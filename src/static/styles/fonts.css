@@ -1,0 +1,11 @@
+html {
+  font-size: 18px;
+}
+
+@font-face {
+  /* arial regular */
+  font-family: 'arial regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/arial-regular.ttf'); 
+}
