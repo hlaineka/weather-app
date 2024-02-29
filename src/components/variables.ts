@@ -1,5 +1,3 @@
-import { css, keyframes } from 'styled-components';
-
 export type Color = keyof typeof palette;
 
 export const palette = {

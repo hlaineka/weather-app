@@ -9,11 +9,6 @@ module.exports = {
     historyApiFallback: {
       verbose: true,
     },
-    proxy: {
-      '/api/**': {
-
-      },
-    },
     static: {
       directory: './src',
     },

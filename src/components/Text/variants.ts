@@ -1,11 +1,6 @@
 import CSS from 'csstype';
 
-export type TextVariant =
-  | 'header'
-  | 'h1'
-  | 'h2'
-  | 'label'
-  | 'p';
+export type TextVariant = 'header' | 'h1' | 'h2' | 'label' | 'p';
 export type TextElement = 'a' | 'h1' | 'h2' | 'h3' | 'label' | 'p' | 'span';
 
 type TextProp = {
@@ -23,8 +18,8 @@ export const variants: Record<TextVariant, TextProp> = {
       fontWeight: '400',
       lineHeight: '23pt',
       marginTop: '23pt',
-      marginBottom: '23pt'
-    }
+      marginBottom: '23pt',
+    },
   },
   h1: {
     element: 'h1',
