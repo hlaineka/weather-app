@@ -55,6 +55,7 @@ export const Dropdown: React.FC<Props> = ({
                 option.label && (
                   <li
                     key={option.value}
+                    className={`${namespace}_element_${option.value}`}
                     id={`${namespace}_element_${option.value}`}
                     aria-selected={option.value === value.value}
                     role="option"
