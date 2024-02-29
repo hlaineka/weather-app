@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Text } from '../Text/Text';
 import { palette } from '../variables';
 
-const Header = () => {
+export const Header = () => {
     const content = "Säätutka";
     return (
         <HeaderContainer>
@@ -22,5 +22,3 @@ const HeaderContainer = styled.div`
   background-color: white;
   border: 1px solid ${palette.greyBorder}
 `;
-
-export default Header;

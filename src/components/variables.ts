@@ -12,6 +12,8 @@ export const palette = {
   greyBorder: '#E6E6E6',
 };
 
+export const SPACING = '1rem';
+export const CONTENT_WIDTH = `calc(100vw - (2 * ${SPACING}))`;
 export const MOBILE_TRESHOLD = 600;
 export const breakpoints = {
   mobile: `${MOBILE_TRESHOLD}px`,
