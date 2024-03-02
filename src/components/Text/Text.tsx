@@ -1,3 +1,4 @@
+import React from 'react';
 import CSS from 'csstype';
 import { variants } from './variants';
 import { palette } from '../variables';

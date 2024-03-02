@@ -1,33 +1,25 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import Header from '../../components/Header';
-import Dropdown from '../../components/Dropdown';
 import { Text } from '../../components/Text/Text';
-import { CONTENT_WIDTH, palette } from '../../components/variables';
-import { Option } from '../../components/Dropdown/variables';
+import { palette } from '../../components/variables';
+import { AppStore } from '../../store/store';
+import React from 'react';
+import { useAppSelector } from '../../hooks/hooks';
+import WeatherContent from './components/WeatherContent';
 
 const Weather = () => {
-  const [dropdownSelection, setDropdownSelection] = useState({
-    value: 'all',
-    label: 'Kaikki kaupungit',
-  });
+  const { loading } = useAppSelector((state: AppStore) => ({
+    loading: state.app.isLoading,
+  }));
 
-  const handlesetDropdownSelection = (selected: Option) => {
-    setDropdownSelection(selected);
-  };
-
-  const content = 'weathers';
   return (
-    <PageContainer>
-      <Header />
-      <ContentContainer>
-        <Dropdown
-          setDropdownSelection={handlesetDropdownSelection}
-          dropdownSelection={dropdownSelection}
-        />
-        <Text>{content}</Text>
-      </ContentContainer>
-    </PageContainer>
+    <>
+      {loading && <Text>loading..</Text>}
+      <PageContainer>
+        <Header />
+        <WeatherContent />
+      </PageContainer>
+    </>
   );
 };
 
@@ -40,16 +32,6 @@ const PageContainer = styled.div`
   margin: auto;
   min-height: 100vh;
   width: 100%;
-`;
-
-const ContentContainer = styled.div`
-  align-items: center;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 1rem;
-  width: ${CONTENT_WIDTH};
 `;
 
 export default Weather;

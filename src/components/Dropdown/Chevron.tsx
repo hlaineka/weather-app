@@ -1,3 +1,4 @@
+import React from 'react';
 import { Color, palette } from '../variables';
 
 type Props = {
@@ -6,11 +7,7 @@ type Props = {
   isLarge?: boolean;
 };
 
-export const Chevron: React.FC<Props> = ({
-  variant,
-  color,
-  isLarge = false,
-}) => (
+const Chevron: React.FC<Props> = ({ variant, color, isLarge = false }) => (
   <svg
     width={isLarge ? 12 : 9}
     height={isLarge ? 20 : 14}
@@ -28,3 +25,5 @@ export const Chevron: React.FC<Props> = ({
     />
   </svg>
 );
+
+export default Chevron;

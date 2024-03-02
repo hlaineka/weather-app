@@ -1,4 +1,5 @@
 //import Spinner from './components/Spinner';
+import React from 'react';
 import styled from 'styled-components';
 import Weather from './features/WeatherPage';
 

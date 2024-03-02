@@ -7,7 +7,12 @@ describe('Dropdown:', () => {
   describe('Rendering:', () => {
     test('should render closed dropdown menu properly', () => {
       //given
-      let dummySelected = { value: 'tampere', label: 'Tampere' };
+      let dummySelected = {
+        value: 'tampere',
+        label: 'Tampere',
+        lat: 0,
+        lng: 0,
+      };
       const dummyHandlesetDropdownSelection = (selected: Option) => {
         dummySelected = selected;
       };
@@ -28,7 +33,12 @@ describe('Dropdown:', () => {
   });
   test('should render open dropdown menu properly', () => {
     //given
-    let dummySelected = { value: 'tampere', label: 'Tampere' };
+    let dummySelected = {
+      value: 'tampere',
+      label: 'Tampere',
+      lat: 0,
+      lng: 0,
+    };
     const dummyHandlesetDropdownSelection = (selected: Option) => {
       dummySelected = selected;
     };
@@ -54,7 +64,12 @@ describe('Dropdown:', () => {
   describe('Selecting:', () => {
     test('should select Espoo properly', async () => {
       //given
-      let dummySelected = { value: 'tampere', label: 'Tampere' };
+      let dummySelected = {
+        value: 'tampere',
+        label: 'Tampere',
+        lat: 0,
+        lng: 0,
+      };
       const dummyHandlesetDropdownSelection = (selected: Option) => {
         dummySelected = selected;
       };

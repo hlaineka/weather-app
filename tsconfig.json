@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "experimentalDecorators": true,
-    "jsx": "react-jsx",
-    "module": "es6",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "outDir": "./dist/",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "resolveJsonModule": true,
-    "sourceMap": true,
     "strict": true,
-    "target": "es2015",
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
   },
-  "include": ["src/*", "@types/*"]
+  "include": ["src"]
 }
