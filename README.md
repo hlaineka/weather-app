@@ -75,8 +75,6 @@ Project uses [git-hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hook
 2. Run tests `npm run test`. If the snapshots do not match, run `npm run test:update`
 3. Start the development server `npm run start`
 
-## End-to-end tests
-
 ## License
 
 MIT license.
