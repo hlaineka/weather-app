@@ -1,7 +1,7 @@
 {
-  "name": "ylitse-web",
+  "name": "weather-app",
   "version": "0.0.1",
-  "description": "Ylitse web UI",
+  "description": "Weather App for Etteplan recruitment assignment",
   "type": "module",
   "main": "./src/App.js",
   "homepage": " https://hlaineka.github.io/weather-app/",
