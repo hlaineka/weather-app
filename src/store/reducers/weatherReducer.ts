@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { WeatherData } from '../../api/types';
+import { WeatherData } from '../api/types';
 import { fetchWeather, transformWeatherData } from '../fetchWeather';
 
 export type CityWeather = {
@@ -20,7 +20,6 @@ export type WeatherState = {
 const initialState: WeatherState = {
   tampere: {
     weatherData: {
-      time: '',
       weather: {
         id: 0,
         main: '',
@@ -37,6 +36,7 @@ const initialState: WeatherState = {
       rain: {
         '3h': 0,
       },
+      dt: 0,
       name: '',
     },
     extendedWeatherData: [],
@@ -45,7 +45,6 @@ const initialState: WeatherState = {
   },
   jyvaskyla: {
     weatherData: {
-      time: '',
       weather: {
         id: 0,
         main: '',
@@ -62,6 +61,7 @@ const initialState: WeatherState = {
       rain: {
         '3h': 0,
       },
+      dt: 0,
       name: '',
     },
     extendedWeatherData: [],
@@ -70,7 +70,6 @@ const initialState: WeatherState = {
   },
   kuopio: {
     weatherData: {
-      time: '',
       weather: {
         id: 0,
         main: '',
@@ -87,6 +86,7 @@ const initialState: WeatherState = {
       rain: {
         '3h': 0,
       },
+      dt: 0,
       name: '',
     },
     extendedWeatherData: [],
@@ -95,7 +95,6 @@ const initialState: WeatherState = {
   },
   espoo: {
     weatherData: {
-      time: '',
       weather: {
         id: 0,
         main: '',
@@ -112,6 +111,7 @@ const initialState: WeatherState = {
       rain: {
         '3h': 0,
       },
+      dt: 0,
       name: '',
     },
     extendedWeatherData: [],
@@ -158,6 +158,7 @@ const weatherSlice = createSlice({
         }
 
         console.log('at the end of the addCase - res');
+        console.log(`Found ${res.weather.name}`);
         console.log(res);
       })
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { WeatherData } from '../api/types';
-import { fetchForecastData, fetchCurrentWeatherData } from '../api/weather';
+import { WeatherData } from './api/types';
+import { fetchForecastData, fetchCurrentWeatherData } from './api/weather';
 import { getTimeString } from '../utils/timeUtils';
 import { kelvinToCelcius } from '../utils/unitConversion';
 import { setIsInitial, setIsLoading } from './reducers/appReducer';
-import { Option } from '../components/Dropdown/variables';
 
 export const fetchWeather = createAsyncThunk(
   'weather/fetchWeather',
@@ -55,7 +54,6 @@ export const transformWeatherData = (
   res[1].list.forEach((i: any, index: number) => {
     if (index < 5) {
       forecast.push({
-        time: getTimeString(i.dt),
         weather: {
           id: i.weather[0].id,
           main: i.weather[0].main,
@@ -63,7 +61,7 @@ export const transformWeatherData = (
           icon: i.weather[0].icon,
         },
         main: {
-          temp: i.main.temp,
+          temp: kelvinToCelcius(i.main.temp),
           humidity: i.main.humidity,
         },
         wind: {
@@ -72,6 +70,7 @@ export const transformWeatherData = (
         rain: {
           '3h': i.rain ? i.rain['3h'] : 0,
         },
+        dt: i.dt,
         name: weather.name,
       });
     }

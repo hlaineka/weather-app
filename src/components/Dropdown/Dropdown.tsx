@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Chevron from './Chevron';
 import { options, Option } from './variables';
-import { CONTENT_WIDTH, palette } from '../variables';
+import { CONTENT_WIDTH, SPACING, palette } from '../variables';
 
 type Props = {
   setDropdownSelection: (selected: Option) => void;
@@ -86,9 +86,11 @@ const DropdownMenu = styled.div`
   background-color: white;
   border: 1px solid ${palette.greyBorder};
   box-sizing: border-box;
+  font-family: 'Arial';
+  font-size: 13px;
   max-width: ${CONTENT_WIDTH};
-  padding-bottom: 8pt;
-  padding-top: 10pt;
+  padding-bottom: calc((${SPACING} / 2) - 3px);
+  padding-top: calc(${SPACING} / 2);
   position: absolute;
   right: 0;
   width: 100%;
@@ -101,10 +103,10 @@ const DropdownMenu = styled.div`
     padding: 0;
 
     li {
-      margin-bottom: 2pt;
+      margin-bottom: 2px;
       max-width: ${CONTENT_WIDTH};
-      padding-left: 10pt;
-      padding-right: 10pt;
+      padding-left: ${SPACING};
+      padding-right: ${SPACING};
 
       &[aria-selected='true'] {
         background: ${palette.blueBackground};
@@ -121,11 +123,15 @@ const DropdownButton = styled.button`
   color: inherit;
   display: flex;
   flex-direction: row;
-  font-size: 13pt;
+  font-family: 'Arial';
+  font-size: 13px;
   justify-content: space-between;
-  line-height: 13pt;
+  line-height: 13px;
   max-width: ${CONTENT_WIDTH};
-  padding: 10pt;
+  padding-bottom: ${SPACING};
+  padding-left: ${SPACING};
+  padding-right: ${SPACING};
+  padding-top: ${SPACING};
   text-align: left;
   width: 100%;
 

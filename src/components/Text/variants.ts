@@ -1,6 +1,16 @@
 import CSS from 'csstype';
 
-export type TextVariant = 'header' | 'h1' | 'h2' | 'label' | 'p';
+export type TextVariant =
+  | 'header'
+  | 'h1'
+  | 'h2'
+  | 'label'
+  | 'p'
+  | 'light'
+  | 'temp'
+  | 'tempSmall'
+  | 'basic'
+  | 'xs';
 export type TextElement = 'a' | 'h1' | 'h2' | 'h3' | 'label' | 'p' | 'span';
 
 type TextProp = {
@@ -13,19 +23,19 @@ export const variants: Record<TextVariant, TextProp> = {
     element: 'h1',
     styles: {
       fontFamily: 'Arial, sans-serif',
-      fontSize: '23pt',
+      fontSize: '23px',
       fontStyle: 'normal',
       fontWeight: '400',
-      lineHeight: '23pt',
-      marginTop: '23pt',
-      marginBottom: '23pt',
+      lineHeight: '23px',
+      marginTop: '23px',
+      marginBottom: '23px',
     },
   },
   h1: {
     element: 'h1',
     styles: {
       fontFamily: 'Arial, sans-serif',
-      fontSize: '23pt',
+      fontSize: '23px',
       fontStyle: 'normal',
       fontWeight: '400',
     },
@@ -34,20 +44,21 @@ export const variants: Record<TextVariant, TextProp> = {
     element: 'h2',
     styles: {
       fontFamily: 'Arial, sans-serif',
-      fontSize: '19pt',
+      fontSize: '19px',
       fontStyle: 'normal',
       fontWeight: '400',
-      lineHeight: '19pt',
+      lineHeight: '19px',
+      marginBottom: '10px',
     },
   },
   label: {
     element: 'label',
     styles: {
       fontFamily: 'Arial, sans-serif',
-      fontSize: '13pt',
+      fontSize: '13px',
       fontStyle: 'normal',
       fontWeight: '400',
-      lineHeight: '13pt',
+      lineHeight: '13px',
     },
   },
   p: {
@@ -58,6 +69,59 @@ export const variants: Record<TextVariant, TextProp> = {
       fontStyle: 'normal',
       fontWeight: '400',
       lineHeight: '1.5rem',
+    },
+  },
+  light: {
+    element: 'span',
+    styles: {
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '13px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '13px',
+    },
+  },
+  temp: {
+    element: 'span',
+    styles: {
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '26px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '26px',
+      marginLeft: '13px',
+    },
+  },
+  tempSmall: {
+    element: 'span',
+    styles: {
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '15px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '15px',
+    },
+  },
+  basic: {
+    element: 'span',
+    styles: {
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '15px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '15px',
+      marginBottom: '5px',
+    },
+  },
+  xs: {
+    element: 'span',
+    styles: {
+      fontFamily: 'Arial, sans-serif',
+      fontSize: '10px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '10px',
+      marginBottom: '3px',
     },
   },
 };

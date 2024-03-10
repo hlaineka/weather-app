@@ -1,5 +1,4 @@
 export type WeatherData = {
-  time: string;
   weather: {
     id: number;
     main: string;
@@ -16,6 +15,7 @@ export type WeatherData = {
   rain: {
     '3h': number;
   };
+  dt: number;
   name: string;
 };
 

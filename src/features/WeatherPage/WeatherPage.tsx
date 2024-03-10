@@ -4,7 +4,7 @@ import { Text } from '../../components/Text/Text';
 import { palette } from '../../components/variables';
 import { AppStore } from '../../store/store';
 import React from 'react';
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppSelector } from '../../store/hooks/hooks';
 import WeatherContent from './components/WeatherContent';
 
 const Weather = () => {
