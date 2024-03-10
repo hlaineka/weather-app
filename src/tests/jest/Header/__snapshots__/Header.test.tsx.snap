@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render component properly 1`] = `
+<div
+  className="sc-bczRLJ llmGys"
+>
+  <h1
+    style={
+      Object {
+        "color": "#262626",
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "23px",
+        "fontStyle": "normal",
+        "fontWeight": "400",
+        "lineHeight": "23px",
+        "marginBottom": "23px",
+        "marginTop": "23px",
+      }
+    }
+  >
+    Säätutka
+  </h1>
+</div>
+`;
