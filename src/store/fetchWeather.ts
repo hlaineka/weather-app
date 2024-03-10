@@ -2,7 +2,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { WeatherData } from './api/types';
 import { fetchForecastData, fetchCurrentWeatherData } from './api/weather';
-import { getTimeString } from '../utils/timeUtils';
 import { kelvinToCelcius } from '../utils/unitConversion';
 import { setIsInitial, setIsLoading } from './reducers/appReducer';
 

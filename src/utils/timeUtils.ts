@@ -3,9 +3,9 @@ export const getTimeString = (time: number) => {
   // multiplied by 1000 so that the argument is in milliseconds, not seconds
   const date = new Date(time * 1000);
 
-  const hours = date.getHours();
+  const hours = ('0' + date.getHours()).slice(-2);
 
-  const minutes = date.getMinutes();
+  const minutes = ('0' + date.getMinutes()).slice(-2);
 
   const formattedTime = hours + ':' + minutes;
 

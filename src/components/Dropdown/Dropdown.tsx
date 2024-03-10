@@ -23,7 +23,7 @@ export const Dropdown: React.FC<Props> = ({
   const value = dropdownSelection;
 
   return (
-    <DropdownContainer>
+    <DropdownContainer className="dropdown-menu">
       <DropdownButton
         onClick={toggleDropdownMenu}
         role="combobox"

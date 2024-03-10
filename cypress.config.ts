@@ -5,7 +5,7 @@ export default defineConfig({
   video: false,
   screenshotOnRunFailure: false,
   e2e: {
-    baseUrl: 'http://localhost:8082',
+    baseUrl: 'http://localhost:3000',
     specPattern: 'cypress/tests/**/*.cy.{js,jsx,ts,tsx}',
   },
 });

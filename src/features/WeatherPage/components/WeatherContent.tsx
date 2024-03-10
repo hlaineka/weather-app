@@ -12,6 +12,10 @@ import { useAppDispatch } from '../../../store/hooks/hooks';
 import { fetchWeather } from '../../../store/fetchWeather';
 import CurrentWeather from './CurrentWeather';
 import Forecast from './Forecast';
+import { useSelector } from 'react-redux';
+import { AppStore } from '../../../store/store';
+import { CityWeather } from '../../../store/reducers/weatherReducer';
+import Text from '../../../components/Text';
 
 const createCityList = (selected: Option) => {
   if (selected.value == 'all') {
@@ -54,6 +58,20 @@ const WeatherContent = () => {
     });
   };
 
+  const { weather, isInitial, isError } = useSelector((store: AppStore) => ({
+    weather: store.weather,
+    isInitial: store.app.isInitial,
+    isError: store.weather.isError,
+  }));
+
+  useEffect(() => {
+    if (isError) {
+      console.log('Cannot load weather for this place');
+    }
+  }, [isError]);
+
+  if (isInitial) return <></>;
+
   const cities = createCityList(dropdownSelection);
 
   return (
@@ -63,14 +81,34 @@ const WeatherContent = () => {
         dropdownSelection={dropdownSelection}
       />
       {cities.map(city => {
+        const key = city.value;
+        const keyTyped = key as keyof typeof Option;
+        const selectedWeather: CityWeather = weather[keyTyped];
+
+        if (
+          selectedWeather.weatherData.dt == 0 ||
+          !selectedWeather.extendedWeatherData[0]
+        )
+          return (
+            <div key={`current-weather-container-${city.value}`}>
+              <Text>Error on loading ${city.value}</Text>
+            </div>
+          );
+
         return (
-          <>
+          <CityContainer
+            className={`current-weather-${city.value}`}
+            key={`current-weather-container-${city.value}`}
+          >
             <CurrentWeather
               key={`current-weather-${city.value}`}
-              selectedCity={city}
+              selectedWeather={selectedWeather}
             />
-            <Forecast key={`forecast-${city.value}`} selectedCity={city} />
-          </>
+            <Forecast
+              key={`forecast-${city.value}`}
+              selectedWeather={selectedWeather}
+            />
+          </CityContainer>
         );
       })}
     </ContentContainer>
@@ -86,6 +124,16 @@ const ContentContainer = styled.div`
   margin: ${SPACING};
   max-width: ${MAX_CONTENT_WIDTH};
   width: ${CONTENT_WIDTH};
+`;
+
+const CityContainer = styled.div`
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  width: 100%;
 `;
 
 export default WeatherContent;

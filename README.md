@@ -11,11 +11,9 @@ The project depends on the following libraries:
 - [Styled-components](https://styled-components.com/)
 - [Redux](https://redux.js.org/)
 - [React-router](https://reactrouter.com/)
-- [Webpack](https://webpack.js.org/)
 - [Babel](https://babeljs.io/)
 - [ESLint](https://eslint.org/)
 - [Jest](https://jestjs.io/)
-- [Cypress](https://www.cypress.io/)
 
 ## Project structure
 
@@ -65,6 +63,8 @@ The project depends on the following libraries:
 
 ### Prerequirities
 
+Add your ["open weather map"](https://home.openweathermap.org/) API key to .env file. Example of the .env file can be found in .env-example
+
 Project uses [git-hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) for pre-commit linting checks. Please initialize git-hooks locally as following:
 
 `git config core.hooksPath .githooks`
@@ -72,8 +72,8 @@ Project uses [git-hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hook
 ### How to run the project?
 
 1. Install node packages `npm i`
-1. Run tests `npm run test`
-1. Start the development server `npm run start`
+2. Run tests `npm run test`. If the snapshots do not match, run `npm run test:update`
+3. Start the development server `npm run start`
 
 ## End-to-end tests
 

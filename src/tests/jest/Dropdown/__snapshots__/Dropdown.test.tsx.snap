@@ -2,7 +2,7 @@
 
 exports[`Dropdown: Rendering: should render closed dropdown menu properly 1`] = `
 <div
-  className="sc-bczRLJ RcPSw"
+  className="sc-bczRLJ RcPSw dropdown-menu"
 >
   <button
     aria-activedescendant="cities_element_tampere"
@@ -10,7 +10,7 @@ exports[`Dropdown: Rendering: should render closed dropdown menu properly 1`] = 
     aria-expanded={false}
     aria-haspopup="listbox"
     aria-labelledby="cities_label"
-    className="sc-dkzDqf hfXXFQ"
+    className="sc-dkzDqf hKnTHE"
     onClick={[Function]}
     role="combobox"
   >
@@ -33,7 +33,7 @@ exports[`Dropdown: Rendering: should render closed dropdown menu properly 1`] = 
 
 exports[`Dropdown: Selecting: should select Espoo properly 1`] = `
 <div
-  className="sc-bczRLJ RcPSw"
+  className="sc-bczRLJ RcPSw dropdown-menu"
 >
   <button
     aria-activedescendant="cities_element_tampere"
@@ -41,7 +41,7 @@ exports[`Dropdown: Selecting: should select Espoo properly 1`] = `
     aria-expanded={false}
     aria-haspopup="listbox"
     aria-labelledby="cities_label"
-    className="sc-dkzDqf hfXXFQ"
+    className="sc-dkzDqf hKnTHE"
     onClick={[Function]}
     role="combobox"
   >
@@ -64,7 +64,7 @@ exports[`Dropdown: Selecting: should select Espoo properly 1`] = `
 
 exports[`Dropdown: should render open dropdown menu properly 1`] = `
 <div
-  className="sc-bczRLJ RcPSw"
+  className="sc-bczRLJ RcPSw dropdown-menu"
 >
   <button
     aria-activedescendant="cities_element_tampere"
@@ -72,7 +72,7 @@ exports[`Dropdown: should render open dropdown menu properly 1`] = `
     aria-expanded={true}
     aria-haspopup="listbox"
     aria-labelledby="cities_label"
-    className="sc-dkzDqf hfXXFQ"
+    className="sc-dkzDqf hKnTHE"
     onClick={[Function]}
     role="combobox"
   >
@@ -91,7 +91,7 @@ exports[`Dropdown: should render open dropdown menu properly 1`] = `
     </svg>
   </button>
   <div
-    className="sc-gsnTZi iuBPRX"
+    className="sc-gsnTZi kUnBqo"
   >
     <ul
       aria-multiselectable={false}

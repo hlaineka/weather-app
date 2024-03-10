@@ -156,10 +156,6 @@ const weatherSlice = createSlice({
             break;
           }
         }
-
-        console.log('at the end of the addCase - res');
-        console.log(`Found ${res.weather.name}`);
-        console.log(res);
       })
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .addCase(fetchWeather.rejected, (state, action) => {

@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-import { AppStore } from '../../../store/store';
-import { useSelector } from 'react-redux';
-import { Option } from '../../../components/Dropdown/variables';
+import React from 'react';
 import Text from '../../../components/Text';
 import styled from 'styled-components';
 import { CONTENT_WIDTH, SPACING, palette } from '../../../components/variables';
@@ -11,38 +8,10 @@ import WeatherIcon from '../../../components/WeatherIcon';
 import { getDateString, getTimeString } from '../../../utils/timeUtils';
 
 type Props = {
-  selectedCity: Option;
+  selectedWeather: CityWeather;
 };
 
-const CurrentWeather: React.FC<Props> = ({ selectedCity }) => {
-  const { weather, isInitial, isError } = useSelector((store: AppStore) => ({
-    weather: store.weather,
-    isInitial: store.app.isInitial,
-    isError: store.weather.isError,
-  }));
-
-  useEffect(() => {
-    if (isError) {
-      console.log('Cannot load weather for this place');
-    }
-  }, [isError]);
-
-  if (isInitial) return <></>;
-
-  const key = selectedCity.value;
-  const keyTyped = key as keyof typeof Option;
-  const selectedWeather: CityWeather = weather[keyTyped];
-
-  if (
-    selectedWeather.weatherData.dt == 0 ||
-    !selectedWeather.extendedWeatherData[0]
-  )
-    return <></>;
-
-  console.log('current weather');
-  console.log(selectedWeather);
-  console.log(selectedWeather.name);
-
+const CurrentWeather: React.FC<Props> = ({ selectedWeather }) => {
   return (
     <CurrentWeatherContainer>
       <BasicInfoContainer>
