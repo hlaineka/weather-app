@@ -22,31 +22,44 @@ The project depends on the following libraries:
 ### Top level
 
     .
-    ├── dist # Compiled files
-    ├── cypress # Cypress and e2e-tests
+    ├── public # Public files
     ├── src # Source files
-    ├── tools # Tools and utilities
     ├── _.config.js, ._, \*.json # Config files
     └── README.md
 
 ### React source files
 
     src
+    ├── components # Reusable components.
+    | ├── Component # Folder to structure components or similar
+    | | ├── Component.tsx # Component code
+    | | ├── index.tsx # The default export
+    | | └── variables.ts # Component specific variables
+    | └── variables.ts # Common variables such as colors and spacings.
     ├── features # Feature based components etc.
-    │ Feature # The feature folder
-    │ ├── api # Feature's API related stuff
-    │ ├── SubComponent # Subfolder to structure subcomponents or similar
-    │ ├── Feature.tsx # React code for the feature
-    │ ├── \*.test.ts(x) # Unittest for the corresponding code
-    │ └── index.tsx # The default export
-    ├── hooks # Custom react hooks
-    ├── login # Static login page
-    ├── register # Static registration page
-    ├── static # Static assets (fonts, images, locales, styles)
+    │ └── Feature # The feature folder
+    │   ├── components # Subfolder to structure subcomponents or similar
+    │   ├── Feature.tsx # React code for the feature
+    │   └── index.tsx # The default export
+    ├── store # Redux functionalities folder
+    | ├── api # files related to API calls
+    | | ├── types.ts # The data types for api calls
+    | | └── weather.ts # The API calls
+    | ├──  hooks # Redux hooks folder
+    | | └── hooks.ts # Hooks, might be redundant
+    | ├── reducers # The reducers folder
+    | | ├── appReducer.ts # Update the state of the app
+    | | └── weatherReducer.ts # Update the state of the weather data
+    | ├── fetchWeather.ts
+    | └── store.ts
+    ├── tests # tests folder
+    | ├── jest # jest tests
+    | | ├── Feature of Component # folder for each tested feature or component
+    | | | ├── __snapshots__ # saved snapshots for testing
+    | | | └── Component.test.tsx # test file for the component
+    ├── utils # util functions folder
     ├── App.tsx # Main App component
-    ├── index.html # The main index.html
-    ├── index.tsx # The main React mounting point
-    └── store.ts # Redux store
+    └── index.tsx # The main React mounting point
 
 ## Usage
 
@@ -63,17 +76,6 @@ Project uses [git-hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hook
 1. Start the development server `npm run start`
 
 ## End-to-end tests
-
-
-## Development
-
-1. Create a branch with your name and a name which describes the change for example john/add-login-page
-1. Make your changes (code changes, tests and documentation)
-1. Create a pull request and find a reviewer
-
-## Releasing
-
-TODO
 
 ## License
 

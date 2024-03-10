@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
-import Dropdown from '../../../../components/Dropdown';
-import { Option } from '../../../../components/Dropdown/variables';
+import Dropdown from '../../../components/Dropdown';
+import { Option } from '../../../components/Dropdown/variables';
 
 describe('Dropdown:', () => {
   describe('Rendering:', () => {
